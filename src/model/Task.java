@@ -11,18 +11,4 @@ public class Task extends Timeslot {
         super(name, startTime, amtTime, endTime);
     }
 
-    @Override
-    public void setStartTime(Time startTime) {
-
-    }
-
-    @Override
-    public void setAmtTime(Time amtTime) {
-
-    }
-
-    @Override
-    public void setEndTime(Time endTime) {
-
-    }
 }
