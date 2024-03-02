@@ -14,16 +14,22 @@ public abstract class Timeslot {
         this.amtTime = amtTime;
         this.endTime = endTime;
     }
-    public abstract void setStartTime(Time startTime);
+    public  void setStartTime(Time startTime){
+        this.startTime = startTime;
+    }
     public Time getStartTime(){
         return this.startTime;
     }
-    public abstract void setAmtTime(Time amtTime);
+    public  void setAmtTime(Time amtTime){
+        this.amtTime = amtTime;
+    }
     public Time getAmtTime() {
         return this.amtTime;
     }
 
-    public abstract void setEndTime(Time endTime);
+    public void setEndTime(Time endTime){
+        this.endTime = endTime;
+    }
     public Time getEndTime(){
         return this.endTime;
     }

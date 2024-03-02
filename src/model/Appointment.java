@@ -9,7 +9,6 @@ public class Appointment extends Timeslot{
 
     @Override
     public void setStartTime(Time startTime) {
-
     }
 
     @Override
