@@ -8,14 +8,16 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import main.model.Schedule;
 
 import java.util.Observable;
-import java.util.Observer;
 
 import static javax.swing.SwingConstants.CENTER;
+import main.Observer;
 
-public class ScheduleGUI extends Application implements Observer {
+public class ScheduleGUI extends Application implements Observer<Schedule, String> {
 
+    private Schedule model;
     BorderPane bp;
     public static final double BUTTON_WIDTH = 150;
     public static final double BUTTON_HEIGHT = 50;
@@ -54,12 +56,13 @@ public class ScheduleGUI extends Application implements Observer {
     public void refresh() {
 
     }
-    @Override
-    public void update(Observable o, Object arg) {
-
-    }
 
     public static void main(String[] args) {
         Application.launch(args);
+    }
+
+    @Override
+    public void update(Schedule schedule, String s) {
+
     }
 }

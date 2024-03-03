@@ -1,13 +1,14 @@
 package main.model;
 
 import java.sql.Time;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
+import main.Observer;
 
 import static main.model.PreferredTime.MORNING;
 
 public class Schedule {
 
+    private final List<Observer<Schedule, String>> observers = new LinkedList<>();
     private static TimeSchedule[] times;
     private static final int SLOTS = 96;
     private Timeslot[] schedule;
