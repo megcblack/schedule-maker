@@ -42,10 +42,12 @@ public class Schedule {
             }
         }
         appointments.add(appt);
+        alertObservers("New Appointment");
     }
 
     public void addTask(Task task) {
         tasks.add(task);
+        alertObservers("New Task");
     }
 
     public ArrayList<Task> getTasks() {
@@ -74,5 +76,15 @@ public class Schedule {
             System.out.println(times[i] + " " + schedule.schedule[i]);
         }
 
+    }
+
+    public void addObserver(Observer<Schedule, String> observer) {
+        this.observers.add(observer);
+    }
+
+    private void alertObservers(String data) {
+        for (var observer : observers) {
+            observer.update(this, data);
+        }
     }
 }

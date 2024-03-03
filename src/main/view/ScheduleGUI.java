@@ -22,7 +22,8 @@ public class ScheduleGUI extends Application implements Observer<Schedule, Strin
     public static final double BUTTON_WIDTH = 150;
     public static final double BUTTON_HEIGHT = 50;
     public void init() {
-
+        this.model = new Schedule();
+        model.addObserver(this);
     }
 
     private void makeMainMenu(){
