@@ -1,4 +1,4 @@
-package model;
+package main.model;
 
 import java.sql.Time;
 
@@ -7,8 +7,8 @@ public class Task extends Timeslot {
     private Appointment before;
     private Appointment after;
 
-    protected Task(String name, Time startTime, Time amtTime, Time endTime) {
-        super(name, startTime, amtTime, endTime);
+    protected Task(String name, String amtTime) {
+        super(name, amtTime);
     }
 
 }
