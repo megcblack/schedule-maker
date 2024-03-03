@@ -3,8 +3,8 @@ package main.model;
 import java.sql.Time;
 
 public class Appointment extends Timeslot{
-    public Appointment(String name, TimeSchedule startTime, TimeSchedule endTime){
-        super(name, startTime, null, endTime);
+    public Appointment(String name, String startTime, String endTime){
+        super(name, startTime, endTime);
     }
 
     public void setTimeAmount(){

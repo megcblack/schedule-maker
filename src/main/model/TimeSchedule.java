@@ -24,6 +24,7 @@ public class TimeSchedule {
         t[1] = minute;
         return t;
     }
+
     public int[] getTime(){
         int[] t = new int[2];
         t[0] = time[0];

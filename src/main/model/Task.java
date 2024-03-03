@@ -7,8 +7,8 @@ public class Task extends Timeslot {
     private Appointment before;
     private Appointment after;
 
-    protected Task(String name, TimeSchedule startTime, TimeSchedule amtTime, TimeSchedule endTime) {
-        super(name, startTime, amtTime, endTime);
+    protected Task(String name, String amtTime) {
+        super(name, amtTime);
     }
 
 }
