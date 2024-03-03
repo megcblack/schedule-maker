@@ -1,4 +1,4 @@
-package model;
+package main.model;
 public class TimeSchedule {
     private int hour;
     private int minute;

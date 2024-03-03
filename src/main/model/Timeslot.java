@@ -1,6 +1,4 @@
-package model;
-
-import java.sql.Time;
+package main.model;
 
 public abstract class Timeslot {
     private String name;
