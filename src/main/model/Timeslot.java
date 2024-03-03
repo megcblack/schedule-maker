@@ -1,7 +1,7 @@
 package main.model;
 
 import java.sql.Time;
-
+import model.TimeSchedule;
 public abstract class Timeslot {
     private String name;
     private TimeSchedule startTime;
