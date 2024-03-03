@@ -61,13 +61,9 @@ public class Schedule {
             }
         }
     }
- /*   public Timeslot[] createSchedule() {
-        for (Task t: tasks) {
-            if (t.getPrefTime() == MORNING) {
-                addTaskToSchedule(t);
-            }
-        }
-    } */
+    public Timeslot[] createSchedule() {
+        return schedule;
+    }
     public static void main(String[] args) {
         setTimesArray();
         Schedule schedule = new Schedule();
