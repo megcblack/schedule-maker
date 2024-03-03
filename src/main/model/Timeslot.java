@@ -38,6 +38,12 @@ public abstract class Timeslot {
         return this.endTime;
     }
 
+    public int getTimeSlotAmount(){
+        int result = (this.amtTime.getHour()*60 + this.amtTime.getMinute())/15;
+        result--;
+        return result;
+    }
+
     @Override
     public String toString() {
         return this.name;
