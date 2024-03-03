@@ -67,7 +67,7 @@ public class TimeSchedule implements Comparable<TimeSchedule> {
     @Override
     public int compareTo(TimeSchedule o) {
         int time1 = this.hour*MAXMINUTE + this.minute;
-        int time2 = o.hour*MAXMINUTE + this.minute;
+        int time2 = o.hour*MAXMINUTE + o.minute;
         return Integer.compare(time1, time2);
     }
 }
