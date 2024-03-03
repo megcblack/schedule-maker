@@ -4,33 +4,33 @@ import java.sql.Time;
 
 public abstract class Timeslot {
     private String name;
-    private Time startTime;
-    private Time amtTime;
-    private Time endTime;
+    private TimeSchedule startTime;
+    private TimeSchedule amtTime;
+    private TimeSchedule endTime;
 
-    protected Timeslot(String name, Time startTime, Time amtTime, Time endTime){
+    protected Timeslot(String name, TimeSchedule startTime, TimeSchedule amtTime, TimeSchedule endTime){
         this.name = name;
         this.startTime = startTime;
         this.amtTime = amtTime;
         this.endTime = endTime;
     }
-    public  void setStartTime(Time startTime){
+    public  void setStartTime(TimeSchedule startTime){
         this.startTime = startTime;
     }
-    public Time getStartTime(){
+    public TimeSchedule getStartTime(){
         return this.startTime;
     }
-    public  void setAmtTime(Time amtTime){
+    public  void setAmtTime(TimeSchedule amtTime){
         this.amtTime = amtTime;
     }
-    public Time getAmtTime() {
+    public TimeSchedule getAmtTime() {
         return this.amtTime;
     }
 
-    public void setEndTime(Time endTime){
+    public void setEndTime(TimeSchedule endTime){
         this.endTime = endTime;
     }
-    public Time getEndTime(){
+    public TimeSchedule getEndTime(){
         return this.endTime;
     }
 }
