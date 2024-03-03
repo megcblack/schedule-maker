@@ -1,5 +1,8 @@
 package main.model;
-public class TimeSchedule {
+
+import java.util.Comparator;
+
+public class TimeSchedule implements Comparable<TimeSchedule> {
     private int hour;
     private int minute;
     private int [] time;
@@ -13,7 +16,7 @@ public class TimeSchedule {
         time[1] = minute;
 
     }
-    public int[] timeDifference(int[] time1, int[] time2){
+    public static int[] timeDifference(int[] time1, int[] time2){
         int sum1 = time1[0]*MAXMINUTE + time1[1];
         int sum2 = time2[0]*MAXMINUTE + time2[1];
         int ans = sum2 - sum1;
@@ -32,7 +35,22 @@ public class TimeSchedule {
         return t;
     }
 
+    public int getHour(){
+        return this.hour;
+    }
+
+    public int getMinute(){
+        return this.minute;
+    }
+
     public String toString(){
         return this.hour + ":" + this.minute;
+    }
+
+    @Override
+    public int compareTo(TimeSchedule o) {
+        int time1 = this.hour*MAXMINUTE + this.minute;
+        int time2 = o.hour*MAXMINUTE + this.minute;
+        return Integer.compare(time1, time2);
     }
 }
