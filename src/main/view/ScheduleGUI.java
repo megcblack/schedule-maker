@@ -4,9 +4,13 @@ import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import main.model.Schedule;
 
@@ -38,6 +42,20 @@ public class ScheduleGUI extends Application implements Observer<Schedule, Strin
         mainMenu.getChildren().add(createSchedule);
         mainMenu.setSpacing(50);
         mainMenu.getChildren().add(viewSchedule);
+    }
+
+    private Scene void makeNewApptScene() {
+        BorderPane b = new BorderPane();
+        b.setTop(new Label("Make a new appointment"));
+        GridPane g = new GridPane();
+        g.add(new Text("Name:"), 0, 0);
+        TextField name = new TextField();
+        g.add(name, 1, 0);
+        g.add(new Text("Start Time:"), 2, 1);
+        TextField startTime = new TextField();
+        g.add(name, 1, 1);
+
+
     }
 
     @Override
