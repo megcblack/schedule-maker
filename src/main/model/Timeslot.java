@@ -6,27 +6,16 @@ public abstract class Timeslot {
     private TimeSchedule amtTime;
     private TimeSchedule endTime;
 
-    int[] splitTime(String time){
-        String[] stringTime = time.split(":");
-        int[] hm = new int[2];
-        hm[0] = Integer.parseInt(stringTime[0]);
-        hm[1] = Integer.parseInt(stringTime[1]);
-
-        return hm;
-    }
     protected Timeslot(String name, String sTime, String eTime){
         this.name = name;
-        int[] hm = splitTime(sTime);
-        int[] hm2 = splitTime(eTime);
-        this.startTime = new TimeSchedule(hm[0], hm[1]);    //Creates start time
-        this.endTime = new TimeSchedule(hm2[0], hm2[1]);    //Creates end time
-        int[] time = TimeSchedule.timeDifference(hm,hm2);
+        this.startTime = new TimeSchedule(sTime);    //Creates start time
+        this.endTime = new TimeSchedule(eTime);    //Creates end time
+        int[] time = TimeSchedule.timeDifference(startTime.getTime(),endTime.getTime());
         this.amtTime = new TimeSchedule(time[0], time[1]);    //Creates amount of time
     }
     protected Timeslot(String name, String amtTime){
         this.name = name;
-        int[] hm = splitTime(amtTime);
-        this.amtTime = new TimeSchedule(hm[0], hm[1]);
+        this.amtTime = new TimeSchedule(amtTime);
     }
     public  void setStartTime(TimeSchedule startTime){
         this.startTime = startTime;
