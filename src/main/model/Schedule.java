@@ -4,6 +4,8 @@ import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import static main.model.PreferredTime.MORNING;
+
 public class Schedule {
 
     private static TimeSchedule[] times;
@@ -11,6 +13,7 @@ public class Schedule {
     private Timeslot[] schedule;
     private ArrayList<Appointment> appointments;
     private ArrayList<Task> tasks;
+
 
 
     private static void setTimesArray () {
@@ -33,7 +36,7 @@ public class Schedule {
     public void addAppointment(Appointment appt) {
         for (int i = 0; i < SLOTS; i++) {
             if (appt.getStartTime().compareTo( times[i]) <= 0
-                && appt.getEndTime().compareTo( times[i]) >= 0) {
+                && appt.getEndTime().compareTo( times[i]) > 0) {
                 schedule[i] = appt;
             }
         }
@@ -50,16 +53,28 @@ public class Schedule {
     public ArrayList<Appointment> getAppointments() {
         return appointments;
     }
+
+    public void addTaskToSchedule(Task t) {
+        for (int i = 0; i < SLOTS; i++) {
+            if (schedule[i] == null) {
+
+            }
+        }
+    }
+ /*   public Timeslot[] createSchedule() {
+        for (Task t: tasks) {
+            if (t.getPrefTime() == MORNING) {
+                addTaskToSchedule(t);
+            }
+        }
+    } */
     public static void main(String[] args) {
         setTimesArray();
         Schedule schedule = new Schedule();
-        for (TimeSchedule s: times) {
-            System.out.print(s + " ");
-        }
-        Appointment appt = new Appointment("myappt", "9:00", "10:00");
+        Appointment appt = new Appointment("myappt", "9:00", "10:30");
         schedule.addAppointment(appt);
-        for (Timeslot t: schedule.schedule) {
-            System.out.println(t);
+        for (int i = 0; i < SLOTS; i++) {
+            System.out.println(times[i] + " " + schedule.schedule[i]);
         }
 
     }

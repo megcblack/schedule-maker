@@ -14,6 +14,7 @@ public class Task extends Timeslot {
         this.prefTime = prefTime;
     }
 
-
-
+    public PreferredTime getPrefTime() {
+        return prefTime;
+    }
 }
