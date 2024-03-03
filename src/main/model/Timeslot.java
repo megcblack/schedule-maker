@@ -37,4 +37,9 @@ public abstract class Timeslot {
     public TimeSchedule getEndTime(){
         return this.endTime;
     }
+
+    @Override
+    public String toString() {
+        return this.name;
+    }
 }
