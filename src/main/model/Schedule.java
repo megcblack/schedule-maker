@@ -1,6 +1,7 @@
 package main.model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Schedule {
 
@@ -24,6 +25,13 @@ public class Schedule {
     }
 
     public void addAppointment() {
+
+    }
+    public static void main(String[] args) {
+        setTimesArray();
+        for (String s: times) {
+
+        }
 
     }
 }
