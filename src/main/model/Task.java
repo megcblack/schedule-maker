@@ -7,8 +7,13 @@ public class Task extends Timeslot {
     private Appointment before;
     private Appointment after;
 
-    protected Task(String name, String amtTime) {
+    protected Task(String name, String amtTime, Appointment before, Appointment after, PreferredTime prefTime) {
         super(name, amtTime);
+        this.before = before;
+        this.after = after;
+        this.prefTime = prefTime;
     }
+
+
 
 }
