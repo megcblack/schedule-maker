@@ -1,8 +1,11 @@
 package main.model;
 
+import java.util.ArrayList;
+
 public class Schedule {
 
     private static String[] times;
+    private static ArrayList<Appointment> appointments;
 
 
     private static void setTimesArray () {
@@ -15,10 +18,12 @@ public class Schedule {
         Schedule.times = times;
     }
 
-    public static void main(String args[]) {
+    public Schedule() {
         setTimesArray();
-        for (String s: times) {
-            System.out.println(s + " ");
-        }
+        appointments = new ArrayList<Appointment>();
+    }
+
+    public void addAppointment() {
+
     }
 }
